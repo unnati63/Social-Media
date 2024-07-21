@@ -6,7 +6,7 @@ const io=require("socket.io")({
         // "http://localhost:3000":true,
         // "http://localhost:8800":true,
 
-        origin: ["http://localhost:3000", "https://socialsphere-backend-7fd7.onrender.com"],
+        origin: ["https://social-media-delta-gray.vercel.app/", "https://socialsphere-backend-7fd7.onrender.com"],
         // origin: [front, back],
     //    origin: process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(',') : []
     }
