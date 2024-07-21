@@ -9,6 +9,7 @@ export default function Share() {
   const PF=process.env.REACT_APP_PUBLIC_FOLDER
   const desc=useRef();
   const [file,setFile]=useState(null);
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
   const submitHandler=async (e)=>{
     e.preventDefault();
@@ -24,7 +25,7 @@ export default function Share() {
       
       newPost.img=fileName;
       try{
-        await axios.post("/upload",data);
+        await axios.post(`${API_BASE_URL}/upload`,data);
       }
       catch(err){
         console.log("error in uploading",err);
@@ -33,7 +34,7 @@ export default function Share() {
     }
 
     try{
-      await axios.post("/posts",newPost)
+      await axios.post(`${API_BASE_URL}/posts`,newPost)
       window.location.reload();
     }
     catch(error){
